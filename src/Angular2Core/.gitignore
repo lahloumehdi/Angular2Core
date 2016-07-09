@@ -1,0 +1,6 @@
+**/node_modules
+**/bin
+**/wwwroot/npmlibs
+**/wwwroot/app
+**/obj
+npm-debug.log*
