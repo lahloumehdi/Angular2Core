@@ -3,10 +3,16 @@ var gulp = require('gulp');
 var clean = require('gulp-clean');
 
 var destPath = './wwwroot/npmlibs/';
+var destPathApp = "./wwwroot/app";
 
 // Delete the dist directory
 gulp.task('clean', function () {
     return gulp.src(destPath)
+        .pipe(clean());
+});
+
+gulp.task('clean-ts', function () {
+    return gulp.src(destPathApp)
         .pipe(clean());
 });
 
@@ -34,7 +40,7 @@ gulp.task('ts', function (done) {
             "appts/**/*.ts"
     ])
         .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
-    return tsResult.js.pipe(gulp.dest('./wwwroot/app'));
+    return tsResult.js.pipe(gulp.dest(destPathApp));
 });
 
 gulp.task('watch', ['watch.ts']);

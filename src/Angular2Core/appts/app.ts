@@ -1,16 +1,25 @@
 ﻿import {Component} from '@angular/core';
-import {HomeComponent} from './components/home.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {AngularCoreService} from "./services/angularcore.service";
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
     selector: 'my-app',
-    template: '<home></home>',
-    directives: [HomeComponent],
+    template: `
+    <h1>{{title}}</h1>
+        <nav>
+          <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+          <a [routerLink]="['/details']" routerLinkActive="active">Details</a>
+        </nav>
+    <router-outlet></router-outlet>
+  `,
+    directives: [ROUTER_DIRECTIVES],
     providers: [
         AngularCoreService
     ]
 })
 
 export class AppComponent {
-
+    title = 'Angular2 Core Bootstrap';
 }
+
