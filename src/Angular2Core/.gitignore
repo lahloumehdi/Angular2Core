@@ -3,4 +3,5 @@
 **/wwwroot/npmlibs
 **/wwwroot/app
 **/obj
+**/typings
 npm-debug.log*

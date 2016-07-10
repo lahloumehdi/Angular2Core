@@ -1,5 +1,5 @@
 # What is Angular2Core
-Angular2 Core is a bootstrap project to start the developement of an Angular2 application hosted in an ASP.NET Core Server.
+Angular2 Core is a bootstrap project to start the developement of an Angular2 (RC4) application hosted in an ASP.NET Core Server.
 
 # Requirements
 
