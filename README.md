@@ -4,6 +4,7 @@ Angular2 Core is a bootstrap project to start the developement of an Angular2 ap
 # Requirements
 
 [Visual Studio 2015 Update 3](https://www.visualstudio.com/products/free-developer-offers-vs.aspx)
+
 [.NET Core 1.0 for Visual Studio](https://go.microsoft.com/fwlink/?LinkId=817245)
 
 # License
