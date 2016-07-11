@@ -3,14 +3,19 @@ import { Http, Headers } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-
 @Injectable()
 export class AngularCoreService {
 
-    private avrUrl = 'api';  // URL to web api
+    private serviceUrl = 'api/Todo/';  // URL to web api
 
     constructor(private http: Http) {
 
+    }
+
+    getAll(): Promise<Angular2Core.Models.Todo[]> {
+        return this.http.get(this.serviceUrl + "GetAll").toPromise().then((response) => {
+            return response.json()
+        }).catch(this.handleError);
     }
 
     getData(id: number): Promise<string[]> {

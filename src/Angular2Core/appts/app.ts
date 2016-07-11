@@ -8,11 +8,10 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     template: `
     <h1>{{title}}</h1>
         <nav>
-          <a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
-          <a [routerLink]="['/details']" routerLinkActive="active">Details</a>
+          <a [routerLink]="['/app/dashboard']" routerLinkActive="active">Dashboard</a>
+          <a [routerLink]="['/app/details']" routerLinkActive="active">Details</a>
         </nav>
-    <router-outlet></router-outlet>
-  `,
+    <router-outlet></router-outlet>`,
     directives: [ROUTER_DIRECTIVES],
     providers: [
         AngularCoreService

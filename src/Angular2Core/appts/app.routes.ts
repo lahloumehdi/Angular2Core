@@ -4,16 +4,16 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: RouterConfig = [
     {
-        path: 'details',
+        path: 'app/details',
         component: CoreDetailsComponent
     },
     {
-        path: 'dashboard',
+        path: 'app/dashboard',
         component: DashboardComponent
     },
     {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/app/dashboard',
         pathMatch: 'full'
     },
 ];
