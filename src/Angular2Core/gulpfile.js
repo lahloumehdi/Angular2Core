@@ -32,12 +32,12 @@ gulp.task("vendrosScripts", () => {
         .pipe(gulp.dest("./wwwroot/npmlibs"));
 });
 
-var tsProject = ts.createProject('appts/tsconfig.json');
+var tsProject = ts.createProject('angularapp/tsconfig.json');
 gulp.task('ts', function (done) {
     //var tsResult = tsProject.src()
     var tsResult = gulp.src([
-            "appts/*.ts",
-            "appts/**/*.ts"
+            "angularapp/*.ts",
+            "angularapp/**/*.ts"
     ])
         .pipe(ts(tsProject), undefined, ts.reporter.fullReporter());
     return tsResult.js.pipe(gulp.dest(destPathApp));
@@ -46,7 +46,7 @@ gulp.task('ts', function (done) {
 gulp.task('watch', ['watch.ts']);
 
 gulp.task('watch.ts', ['ts'], function () {
-    return gulp.watch('appts/**/*.ts', ['ts']);
+    return gulp.watch('angularapp/**/*.ts', ['ts']);
 });
 
 gulp.task('default', ['vendrosScripts', 'watch']);

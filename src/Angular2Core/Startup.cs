@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.IO;
+using Microsoft.Extensions.FileProviders;
 
 namespace Angular2Core
 {
@@ -54,11 +55,20 @@ namespace Angular2Core
                 // Rewrite request to use app root
                 if (context.Response.StatusCode == 404 && context.Request.Path.Value.StartsWith("/app"))
                 {
+
                     context.Request.Path = "/index.html";
                     await next();
                 }
             });
             app.UseStaticFiles();
+            if (env.IsDevelopment())
+            {
+                app.UseFileServer(new FileServerOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(System.IO.Path.Combine(env.ContentRootPath, "angularapp")),
+                    RequestPath = new PathString("/angularapp"),
+                });
+            }
             app.UseMvc();
         }
     }
